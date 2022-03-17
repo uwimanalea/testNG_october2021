@@ -46,6 +46,14 @@ String url;
 		By city_locator = By.xpath("//*[@id=\"city\"]");
 		By state_religion_locator = By.xpath("//*[@id=\"state\"]");
 		By zip_locator = By.xpath("//*[@id=\"zip\"]");
+		By Tags_locator = By.xpath("//*[@id=\"tags\"]");
+		By Submit_locator = By.xpath("//*[@id=\"submit\"]");
+		By currency_locator = By.xpath("//select[@id=\"currency\"]");
+		//By Group_locator = By.xpath("//*[@id=\"add_new_group\"]");
+		By group_name_locator = By.xpath("//select[@id=\"group\"]");
+		//By save_locator = By.xpath("/html/body/div[1]/div/div/div/div[3]/button");
+		By passworld_locator = By.xpath("//*[@id=\"password\"]");
+		By comfirmPassword_locator = By.xpath("//*[@id=\"cpassword\"]");
 		
 		
 		
@@ -130,8 +138,18 @@ driver.findElement(address_locator).sendKeys("12th steret");
 driver.findElement(city_locator).sendKeys("puyallup");
 driver.findElement(state_religion_locator).sendKeys("washington");
 driver.findElement(zip_locator).sendKeys(generateRandom(9) + "98375");
+driver.findElement(Tags_locator).sendKeys("add");
 selectFromDropdown(COUNTRY_LOCATOR, "United Arab Emirates");
-
+selectFromDropdown(currency_locator, "USD");
+/*
+ * driver.findElement(Group_locator).click();
+ * driver.findElement(group_name_locator).sendKeys("world");
+ */
+selectFromDropdown(group_name_locator, "world");
+//driver.findElement(save_locator).click();
+driver.findElement(passwordLocator).sendKeys("abc123");
+driver.findElement(comfirmPassword_locator).sendKeys("abc123");
+driver.findElement(Submit_locator).click();
 
 }
 
